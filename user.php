@@ -2,31 +2,44 @@
 
     class User {
 
-        private $_nom;
-        private $_mdp;
+        private $_username;
+        private $_password;
 
         public function AfficherNom(){
 
-            echo "<p> Le nom est ".$this->_nom."</p>";
+            echo "<p> Le nom est ".$this->_username."</p>";
 
         }
 
         public function AfficherMdp(){
 
-            echo "<p> Le nom est ".$this->_mdp."</p>";
+            echo "<p> Le MDP est ".$this->_password."</p>";
 
         }
 
-        public function setMdp($mdp){
+        public function setMdp($password){
 
-            $this->_mdp = $mdp;
+            $this->_password = $password;
 
         }
 
 
         public function setNom($NouveauNom){
 
-            $this->_nom = $NouveauNom;
+            $this->_username = $NouveauNom;
+
+        }
+        public function verifMdp($usrname, $pwd){
+
+            if($usrname == $this->_username){
+                if($pwd == $this->_password){
+
+                    return true;
+
+                }
+
+            }
+            return false;
 
         }
 
