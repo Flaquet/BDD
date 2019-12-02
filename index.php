@@ -24,10 +24,10 @@
         <h1>Connexion</h1>
 
         <label><b>Nom d'utilisateur</b></label>
-        <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+        <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" value="Edouard" required>
 
         <label><b>Mot de passe</b></label>
-        <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+        <input type="password" placeholder="Entrer le mot de passe" name="password" value="123" required>
 
         <input type="submit" id='submit' value='LOGIN'>
 
@@ -45,7 +45,7 @@
 
         try{
             $BaseFlaquet=new PDO('mysql:host=192.168.65.204; dbname=Docteur; charset=utf8','FlaquetFlemal', 'FlaquetFlemal');
-            echo "select * from medicament" ;
+            echo " select * from medicament" ;
             $ResultRequet = $BaseFlaquet->query("select * from medicament"); 
             echo "<table border = 1> <tr><td>id medicament</td><td>medicament</td></tr>";
             while ($Table = $ResultRequet->fetch()){
@@ -60,6 +60,33 @@
          catch (Exception $erreur){
              echo $erreur->getMessage();
         }
+
+        try{
+            $BaseFlaquet=new PDO('mysql:host=192.168.65.204; dbname=Docteur; charset=utf8','FlaquetFlemal', 'FlaquetFlemal');
+            echo "SELECT medecin.nom,medecin.prenom,medicament.nomcommer 
+            FROM `medecin`,`prescription`,`medicament`,`consultation` 
+            WHERE medicament.codeSS = prescription.codeSS 
+            AND prescription.numconsultation = consultation.numconsultation 
+            AND consultation.matrimedecin = medecin.matricule" ;
+            $ResultRequet = $BaseFlaquet->query("SELECT medecin.nom,medecin.prenom,medicament.nomcommer 
+            FROM `medecin`,`prescription`,`medicament`,`consultation` 
+            WHERE medicament.codeSS = prescription.codeSS 
+            AND prescription.numconsultation = consultation.numconsultation 
+            AND consultation.matrimedecin = medecin.matricule"); 
+            echo "<table border = 1> <tr><td>nom med</td><td>premon med</td><td>medicament</td></tr>";
+            while ($Table = $ResultRequet->fetch()){
+                 echo "<tr> ";
+                 echo '<td> '.$Table["nom"].' </td><td> '.$Table["prenom"].'</td><td> '.$Table["nomcommer"].'</td>' ;
+                 echo "<tr>";
+            }
+            $ResultRequet->closeCursor();
+            echo "</table>";
+
+        }
+         catch (Exception $erreur){
+             echo $erreur->getMessage();
+        }
+
     }    
 
     ?>
