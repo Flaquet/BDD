@@ -63,11 +63,13 @@
 
         try{
             $BaseFlaquet=new PDO('mysql:host=192.168.65.204; dbname=Docteur; charset=utf8','FlaquetFlemal', 'FlaquetFlemal');
-            echo "SELECT medecin.nom,medecin.prenom,medicament.nomcommer 
+           
+           echo "SELECT medecin.nom,medecin.prenom,medicament.nomcommer 
             FROM `medecin`,`prescription`,`medicament`,`consultation` 
             WHERE medicament.codeSS = prescription.codeSS 
             AND prescription.numconsultation = consultation.numconsultation 
             AND consultation.matrimedecin = medecin.matricule" ;
+
             $ResultRequet = $BaseFlaquet->query("SELECT medecin.nom,medecin.prenom,medicament.nomcommer 
             FROM `medecin`,`prescription`,`medicament`,`consultation` 
             WHERE medicament.codeSS = prescription.codeSS 
