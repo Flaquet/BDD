@@ -24,15 +24,50 @@
 
     <table>
         <tr>
-            <td> Les User </td> 
-            
+            <td> Les User </td>
+
         </tr>
         <tr>
             <td>Propriétés</td>
             <td><span id="ligne">-Nom</span> -Premon</td>
         </tr>
-        <tr><td>Void</td><td>AfficheUser()</td></tr>
+        <tr>
+            <td>Void</td>
+            <td>AfficheUser()</td>
+        </tr>
     </table>
+
+    <textarea name="" id="" cols="70" rows="30">
+    Index
+    <php
+
+            $User = new User();
+            $User->setNomPrenom("Flaquet", "Edouard");
+            $User->AfficheUser();
+
+        ?>
+    User
+    <php
+
+    class User {
+
+        private $NOM;
+        private $PRENOM;
+
+        public function AfficheUser(){
+            echo "Je suis un User ".$this->NOM." ".$this->PRENOM;
+        }
+
+        public function setNomPrenom($newNom , $newPrenom){
+            $this->NOM = $newNom;
+            $this->PRENOM = $newPrenom;
+        }
+
+    }
+
+    ?>
+
+    </textarea>
 
 </body>
 
