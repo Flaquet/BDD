@@ -1,0 +1,9 @@
+td{
+    text-align: center;
+}
+table ,td, tr{
+    border:1px solid #6495ed;
+}
+#ligne{
+    display: block;
+}
