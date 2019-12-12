@@ -11,7 +11,7 @@
     
     <?php
 
-        $Joueur1 = new Pers0nnage("julien");
+        $Joueur1 = new Personnage("julien");
         $Joueur1->affiche();
 
     ?>

@@ -3,24 +3,17 @@
 
 class Personnage{
 
-    private $Pseudo;
-    private $Vie;
+    private $_Pseudo;
+    private $_Vie;
 
-    public function __construct($pseudo, $vie){
+    public function __construct($pseudo){
 
-        $this->Pseudo = $pseudo;
-        $vie = "100";
-        $this->Vie = $vie;
+        $this->_Pseudo = $pseudo;
+        $this->_Vie = "100";
        
 
     }
 
-    public function affiche(){
-
-        ?>  <span class="br"> <?php echo    "Le Joueur : ".$this->Pseudo." a  : ".$this->Vie." de Vie."; ?> </span> <?php
-        
-
-    }
 
 }
 

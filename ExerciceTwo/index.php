@@ -15,10 +15,8 @@
 
     <?php
 
-    $Jouer1 = new Personnage("Julien", "");
-    $Jouer1->affiche();
-    $Jouer2 = new Personnage("Edouard", "");
-    $Jouer2->affiche();
+    $Jouer1 = new Personnage("Julien");
+    $Jouer2 = new Personnage("Edouard");
 
     ?>
 
@@ -26,10 +24,10 @@
     Index
     <php
 
-    $Jouer1 = new Personnage("Julien", "");
-    $Jouer1->affiche();
-    $Jouer2 = new Personnage("Edouard", "");
-    $Jouer2->affiche();
+    $Jouer1 = new Personnage("Julien");
+
+    $Jouer2 = new Personnage("Edouard");
+
  
     ?>
     Personnage
@@ -40,28 +38,17 @@
     private $Pseudo;
     private $Vie;
 
-    public function __construct($pseudo, $vie){
+        public function __construct($pseudo, $vie){
 
         $this->Pseudo = $pseudo;
         $vie = "100";
         $this->Vie = $vie;
        
 
-    }
+        }
 
-    public function affiche(){
-
-        ?>  <span class="br"> 
-            <php 
-        echo    "Le Joueur : ".$this->Pseudo." a  : ".$this->Vie." de Vie."; 
-        ?> 
-    </span> 
-    <php
-        
 
     }
-
-}
 
     ?>
 
