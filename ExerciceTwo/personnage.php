@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 
 class Personnage{
@@ -7,7 +8,17 @@ class Personnage{
 
     public function __construct($pseudo, $vie){
 
-        echo
+        $this->Pseudo = $pseudo;
+        $vie = "100";
+        $this->Vie = $vie;
+       
+
+    }
+
+    public function affiche(){
+
+        ?>  <span class="br"> <?php echo    "Le Joueur : ".$this->Pseudo." a  : ".$this->Vie." de Vie."; ?> </span> <?php
+        
 
     }
 
