@@ -1,6 +1,6 @@
 <?php
 
-class Pers0nna8e{
+class Personnage{
 
     private $Pseudo;
     private $Vie;
@@ -22,6 +22,12 @@ class Pers0nna8e{
     public function attaquer($Joueur){
 
         
+
+    }
+
+    public function defense(){
+
+
 
     }
 
