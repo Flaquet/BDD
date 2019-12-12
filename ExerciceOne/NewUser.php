@@ -2,16 +2,16 @@
 
     class User {
 
-        private $NOM;
-        private $PRENOM;
+        private $_NOM;
+        private $_PRENOM;
 
         public function AfficheUser(){
-            echo "Je suis un User ".$this->NOM." ".$this->PRENOM;
+            echo "Je suis un User ".$this->_NOM." ".$this->_PRENOM;
         }
 
         public function setNomPrenom($newNom , $newPrenom){
-            $this->NOM = $newNom;
-            $this->PRENOM = $newPrenom;
+            $this->_NOM = $newNom;
+            $this->_PRENOM = $newPrenom;
         }
 
     }

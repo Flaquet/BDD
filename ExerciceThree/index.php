@@ -13,7 +13,9 @@
 
         $Joueur1 = new Personnage("julien");
         $Joueur1->affiche();
-
+        $Joueur2 = new Personnage("Edouard");
+        $Joueur2->affiche();
+        
     ?>
 
 
