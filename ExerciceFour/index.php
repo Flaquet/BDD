@@ -8,6 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+
+        $Personnage1 = new Personnage("20", "Edouard");
+        $Personnage2 = new Personnage("12","Julien");
+
+        $Personnage1->affiche();
+        $Personnage2->affiche();
+
+        $Personnage1->Attaquer($Personnage2);
+        $Personnage2->attaquer($Personnage1);
+
+    ?>
 </body>
 </html>
