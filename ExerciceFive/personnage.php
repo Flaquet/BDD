@@ -7,11 +7,24 @@ class Personnage{
     private $_Force;
 
 
-    public function __construct($force, $pseudo){
+    public function __construct($leid){
 
-        $this->_Pseudo = $pseudo;
-        $this->_Vie = "100";
-        $this->_Force = $force;
+        $this->_id = $leid;
+        
+        try {
+           
+            $_id = new PDO('mysql:host=192.168.65.204; dbname=personnage;charset=utf8','DouDou', 'DouDou');
+            $Bdd = $_id->query("SELECT * FROM personnage WHERE id_personnage = ".$this->_id."");   
+            $TableauDeDonnee = $Bdd ->fetch();
+            $this->_Pseudo =  $TableauDeDonnee['Pseudo'];
+            $this->_Vie =  $TableauDeDonnee['Vie'];
+            $this->_Force =  $TableauDeDonnee['Force'];
+            $Bdd ->closeCursor();
+            }
+            catch (Exception $erreur){
+                echo "".$erreur;
+                }   
+
 
     }
 
