@@ -1,34 +1,19 @@
 <?php
-
 class User
 {
-
-    private $_username;
-    private $_password;
-
-    public function AfficherNom()
+    private $_id;
+    private $_Nom;
+    public function __construct($id, $nom)
     {
-        echo "<p> Le nom est " . $this->_username . "</p>";
+        $this->_id = $id;
+        $this->_Nom = $nom;
     }
-    public function AfficherMdp()
+    public function getId()
     {
-        echo "<p> Le MDP est " . $this->_password . "</p>";
+        return $this->_id;
     }
-    public function setMdp($password)
+    public function getNom()
     {
-        $this->_password = $password;
-    }
-    public function setNom($NouveauNom)
-    {
-        $this->_username = $NouveauNom;
-    }
-    public function verifMdp($usrname, $pwd)
-    {
-        if ($usrname == $this->_username) {
-            if ($pwd == $this->_password) {
-                return true;
-            }
-        }
-        return false;
+        return $this->_Nom;
     }
 }
